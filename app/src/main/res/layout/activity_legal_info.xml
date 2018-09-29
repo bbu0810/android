@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.hitchtransporter.transporter.Activities.LegalInfo">
+
+    <include layout="@layout/transporter_toolbar" />
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.hitchtransporter.smart.customViews.SmartTextView
+                android:id="@+id/title_terms_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:gravity="center"
+                android:text="@string/terms_conditions"
+                android:textStyle="bold" />
+
+            <com.hitchtransporter.smart.customViews.SmartTextView
+                android:id="@+id/desc_terms_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_10sdp"
+                android:gravity="center"
+                android:text="@string/no_data_found" />
+
+            <CheckBox
+                android:id="@+id/legal_cb"
+                style="@style/textView_h2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_5sdp"
+                android:text="@string/check_legal"
+                android:visibility="gone" />
+
+            <com.hitchtransporter.smart.customViews.SmartButton
+                android:id="@+id/legal_btn"
+                android:background="@drawable/bg_grey"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_margin="@dimen/_5sdp"
+                android:text="@string/proceed"
+                android:textColor="@color/white"
+                android:textAllCaps="false"
+                android:visibility="gone" />
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+</LinearLayout>

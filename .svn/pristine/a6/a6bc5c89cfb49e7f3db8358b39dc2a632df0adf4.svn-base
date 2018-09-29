@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginEnd="@dimen/_50sdp"
+        android:layout_marginStart="@dimen/_50sdp"
+
+        android:orientation="vertical"
+        tools:context="com.hitchtransporter.transporter.Activities.Register">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_50sdp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/_20sdp">
+
+            <RelativeLayout
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_100sdp">
+
+                <com.hitchtransporter.smart.customViews.RoundedImageView
+                    android:id="@+id/register_profile"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/profile_pic"
+                    app:border_color="@color/primaryColorDark"
+                    app:border_width="@dimen/_1sdp" />
+
+                <ImageView
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:src="@drawable/plus_sign" />
+            </RelativeLayout>
+
+
+            <com.hitchtransporter.smart.customViews.SmartTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_25sdp"
+                android:text="@string/use_this_app_as" />
+
+            <com.hitchtransporter.smart.customViews.SmartEditText
+                android:id="@+id/usertype_register_et"
+                style="@style/editText_h3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableEnd="@drawable/ic_drop_arrow_green"
+                android:focusableInTouchMode="false"
+                android:gravity="center"
+                android:hint="@string/user_transporter"
+                android:inputType="textPersonName"
+                android:textAllCaps="true" />
+
+            <com.hitchtransporter.smart.customViews.SmartTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_25sdp"
+                android:text="@string/first_name" />
+
+            <com.hitchtransporter.smart.customViews.SmartEditText
+                android:id="@+id/firstname_register_et"
+                style="@style/editText_h3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:hint="e.g. Max"
+                android:inputType="textPersonName" />
+
+            <com.hitchtransporter.smart.customViews.SmartTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_25sdp"
+                android:text="@string/surname" />
+
+            <com.hitchtransporter.smart.customViews.SmartEditText
+                android:id="@+id/lastname_register_et"
+                style="@style/editText_h3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:hint="@string/hunt"
+                android:inputType="textPersonName" />
+
+            <com.hitchtransporter.smart.customViews.SmartTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_25sdp"
+                android:text="@string/phone_no" />
+
+            <com.hitchtransporter.smart.customViews.SmartEditText
+                android:id="@+id/mobile_register_et"
+                style="@style/editText_h3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:hint="e.g. 987654321"
+                android:inputType="number" />
+
+            <com.hitchtransporter.smart.customViews.SmartTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_25sdp"
+                android:text="@string/email" />
+
+            <com.hitchtransporter.smart.customViews.SmartEditText
+                android:id="@+id/email_register_et"
+                style="@style/editText_h3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:hint="e.g. user@gmail.com"
+                android:inputType="textPersonName" />
+
+            <com.hitchtransporter.smart.customViews.SmartTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_25sdp"
+                android:text="@string/address" />
+
+            <com.hitchtransporter.smart.customViews.SmartEditText
+                android:id="@+id/address_register_et"
+                style="@style/editText_h3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusableInTouchMode="false"
+                android:gravity="center"
+                android:hint="e.g. 3000 B 1st Ave, Denver, CO 80206, USA" />
+
+
+            <com.hitchtransporter.smart.customViews.SmartTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_25sdp"
+                android:text="@string/hint_password" />
+
+            <com.hitchtransporter.smart.customViews.SmartEditText
+                android:id="@+id/passowrd_register_et"
+                style="@style/editText_h3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:hint="xxxx"
+                android:inputType="textPassword" />
+
+            <com.hitchtransporter.smart.customViews.SmartTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_25sdp"
+                android:text="@string/re_enter_password" />
+
+            <com.hitchtransporter.smart.customViews.SmartEditText
+                android:id="@+id/re_passowrd_register_et"
+                style="@style/editText_h3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:hint="xxxx"
+                android:inputType="textPassword" />
+
+
+            <com.hitchtransporter.smart.customViews.SmartButton
+                android:id="@+id/register_btn"
+                style="@style/textView_white_h4"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_25sdp"
+                android:background="@drawable/bg_round_dark_primary_border"
+                android:paddingEnd="@dimen/_40sdp"
+                android:paddingStart="@dimen/_40sdp"
+                android:text="@string/sign_up"
+                android:textAllCaps="true" />
+        </LinearLayout>
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>

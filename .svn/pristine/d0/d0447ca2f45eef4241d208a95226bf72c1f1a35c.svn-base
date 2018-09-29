@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: yazon-maven:linkedin-sdk-1.1.4">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/linkedin-sdk-1.1.4.aar/adf8aec6edc6cfdc9aa66f0600c2befa/jars/libs/volley.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/linkedin-sdk-1.1.4.aar/adf8aec6edc6cfdc9aa66f0600c2befa/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/linkedin-sdk-1.1.4.aar/adf8aec6edc6cfdc9aa66f0600c2befa/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/yazon-maven/linkedin-sdk/1.1.4/7ddd88555b747d7b75f9af6158650bd6eecec5d1/linkedin-sdk-1.1.4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

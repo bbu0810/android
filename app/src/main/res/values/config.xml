@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="facebook_appId">"1997752267120711"</string>
+    <string name="google_map_key">"AIzaSyD7ZsI6h1qA7UuIJ9apA8oIQHIFUDq2-Fs"</string>
+    <string name="font_normal">"fonts/Montserrat-Light.ttf"</string>
+    <string name="font_bold">"fonts/Montserrat-Regular.ttf"</string>
+    <string name="date_time_format">yyyy-MM-dd HH:mm</string>
+    <string name="date_time_format_2">MMM,dd yyyy hh:mm aa</string>
+    <string name="date_time_format_3">MMM,dd yyyy HH:mm</string>
+    <string name="time_format">HH:mm:ss</string>
+    <string name="time_format_2">HH:mm aa</string>
+    <string name="time_format_3">HH:mm</string>
+    <string name="date_format">yyyy-MM-dd</string>
+    <string name="date_format_2">dd/MM/yyyy</string>
+    <string name="date_format_3">dd/MM/yyyy HH:mm</string>
+
+    <!--<string name="stripe_key_test">pk_test_TEQ3w3vIDDXtOHLVJJ2QfrNv</string>-->
+    <string name="stripe_key_test">pk_live_Rf34qPSnONPBphqjZbMjQS5j</string>
+   <!-- <string name="stripe_key">pk_live_mCbCZ5CMqjlU36OcAvuYbRVu</string>-->
+
+    <string name="domain_name">"http://solutiontrackers.com/dev-m/"</string>
+    <string name="domain_name_local2">"http://192.168.0.123/transporter/index.php/Webservice/"</string>
+    <!--<string name="domain_name_local">"http://solutiontrackers.com/dev-a/transporter/index.php/Webservice/"</string>-->
+    <string name="domain_name_local">"http://solutiontrackers.com/dev-a/transporter/index.php/Webservice/"</string>
+    <!--<string name="domain_name_local">"http://www.stacksummation.com/transporter-new/index.php/Webservice/"</string>-->
+
+    <!--QUICKBLOX KEYS-->
+
+    <string name="quickblox_app_id">62912</string>
+    <string name="quickblox_auth_id">Uar-ShnJBpvT3xH</string>
+    <string name="quickblox_auth_secret">O5xhNaASEAU4Er3</string>
+    <string name="quickblox_account_key">b8MdTbqAs2NkCmXuZns4</string>
+
+</resources>

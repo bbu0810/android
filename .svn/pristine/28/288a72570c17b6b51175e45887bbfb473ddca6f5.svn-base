@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/back_btn"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_margin="@dimen/_5sdp"
+            android:src="@drawable/ic_back" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="@dimen/_50sdp"
+            android:layout_marginStart="@dimen/_50sdp"
+            android:layout_marginTop="@dimen/_25sdp"
+            android:gravity="center"
+            android:orientation="vertical"
+            tools:context="com.hitchtransporter.transporter.Activities.Register">
+
+            <ImageView
+                android:layout_width="@dimen/_125sdp"
+                android:layout_height="@dimen/_125sdp"
+                android:src="@drawable/forgot_password" />
+
+            <com.hitchtransporter.smart.customViews.SmartTextView
+                style="@style/textView_h4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:text="@string/forgot_password"
+                android:textAllCaps="true"
+                android:textStyle="bold" />
+
+
+            <com.hitchtransporter.smart.customViews.SmartTextView
+                style="@style/textView_h2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:gravity="center"
+                android:text="@string/forgot_password_text" />
+
+            <com.hitchtransporter.smart.customViews.SmartEditText
+                android:id="@+id/email_forgot_et"
+                style="@style/editText_h3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:gravity="center"
+                android:hint="@string/email_address"
+                android:inputType="textPersonName" />
+
+            <com.hitchtransporter.smart.customViews.SmartEditText
+                android:id="@+id/passowrd_forgot_et"
+                style="@style/editText_h3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:gravity="center"
+                android:hint="@string/new_password"
+                android:inputType="textPassword"
+                android:textAllCaps="true" />
+
+            <com.hitchtransporter.smart.customViews.SmartEditText
+                android:id="@+id/re_passowrd_forgot_et"
+                style="@style/editText_h3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:gravity="center"
+                android:hint="@string/re_enter_password"
+                android:inputType="textPassword" />
+
+            <com.hitchtransporter.smart.customViews.SmartButton
+                android:id="@+id/reset_password_btn"
+                style="@style/textView_white_h2"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_gravity="center"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_25sdp"
+                android:background="@drawable/bg_round_dark_primary_border"
+                android:paddingEnd="@dimen/_40sdp"
+                android:paddingStart="@dimen/_40sdp"
+                android:text="@string/reset_password"
+
+                android:textAllCaps="true" />
+
+            <LinearLayout
+                android:id="@+id/signup_forgot_Ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_40sdp"
+                android:gravity="center">
+
+                <com.hitchtransporter.smart.customViews.SmartTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/don_t_have_an_account" />
+
+                <com.hitchtransporter.smart.customViews.SmartTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:text="@string/sign_up_exclm"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>

@@ -1,0 +1,446 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_round_white">
+
+    <android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/profile_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_10sdp"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true">
+
+                        <com.hitchtransporter.smart.customViews.SmartTextView
+                            android:id="@+id/btnGoOnline"
+                            android:layout_width="@dimen/_130sdp"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_centerHorizontal="true"
+                            android:layout_margin="5dp"
+                            android:background="@color/primaryColor"
+                            android:padding="8dp"
+                            android:gravity="center"
+                            android:text="@string/go_online"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_13sdp" />
+
+                        <com.hitchtransporter.smart.customViews.RoundedImageView
+                            android:id="@+id/image_profile_iv"
+                            android:layout_width="@dimen/_100sdp"
+                            android:layout_height="@dimen/_100sdp"
+                            android:layout_below="@+id/btnGoOnline"
+                            android:layout_centerHorizontal="true"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/profile_pic"
+                            app:border_color="@color/primaryColorDark"
+                            app:border_width="@dimen/_1sdp" />
+
+                        <ImageView
+                            android:id="@+id/edit_profile_image_iv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBottom="@+id/image_profile_iv"
+                            android:layout_alignRight="@+id/image_profile_iv"
+                            android:layout_marginBottom="@dimen/_11sdp"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            android:layout_marginRight="120dp"
+                            android:src="@drawable/plus_sign"
+                            android:visibility="gone" />
+
+
+                    </RelativeLayout>
+
+
+                </RelativeLayout>
+
+
+                <com.hitchtransporter.smart.customViews.SmartEditText
+                    android:id="@+id/first_name_et"
+                    style="@style/textView_h3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/bottom_line_black"
+                    android:drawablePadding="@dimen/_20sdp"
+                    android:drawableStart="@drawable/ic_name"
+                    android:gravity="center_vertical"
+                    android:hint="@string/first_name"
+                    android:padding="@dimen/_10sdp"
+                    android:textColor="@color/black" />
+
+
+                <com.hitchtransporter.smart.customViews.SmartEditText
+                    android:id="@+id/last_name_et"
+                    style="@style/textView_h3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bottom_line_black"
+                    android:drawablePadding="@dimen/_20sdp"
+                    android:drawableStart="@drawable/ic_name"
+                    android:gravity="center_vertical"
+                    android:hint="@string/surname"
+                    android:padding="@dimen/_10sdp"
+                    android:textColor="@color/black" />
+
+
+                <com.hitchtransporter.smart.customViews.SmartEditText
+                    android:id="@+id/mobile_et"
+                    style="@style/textView_h3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bottom_line_black"
+                    android:drawablePadding="@dimen/_20sdp"
+                    android:drawableStart="@drawable/ic_phone"
+                    android:gravity="center_vertical"
+                    android:hint="@string/phone_no"
+                    android:padding="@dimen/_10sdp"
+                    android:textColor="@color/black" />
+
+                <com.hitchtransporter.smart.customViews.SmartEditText
+                    android:id="@+id/email_et"
+                    style="@style/textView_h3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bottom_line_black"
+                    android:drawablePadding="@dimen/_20sdp"
+                    android:drawableStart="@drawable/ic_email"
+                    android:gravity="center_vertical"
+                    android:hint="@string/email"
+                    android:padding="@dimen/_10sdp"
+                    android:paddingBottom="@dimen/_10sdp"
+                    android:textColor="@color/black" />
+
+                <com.hitchtransporter.smart.customViews.SmartEditText
+                    android:id="@+id/address_et"
+                    style="@style/textView_h3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bottom_line_black"
+                    android:drawablePadding="@dimen/_20sdp"
+                    android:drawableStart="@drawable/ic_location"
+                    android:focusableInTouchMode="false"
+                    android:gravity="center_vertical"
+                    android:hint="@string/address_here"
+                    android:padding="@dimen/_10sdp"
+                    android:textColor="@color/black" />
+
+                <RelativeLayout
+                    android:id="@+id/rlCountry"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:background="@drawable/imgpsh_fullsize" />
+
+                    <com.hitchtransporter.smart.customViews.SmartEditText
+                        android:id="@+id/country_et"
+                        style="@style/textView_h3"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/_38sdp"
+                        android:background="@null"
+                        android:drawablePadding="@dimen/_20sdp"
+                        android:editable="false"
+                        android:focusableInTouchMode="false"
+                        android:gravity="center_vertical"
+                        android:hint="@string/country"
+                        android:padding="@dimen/_10sdp"
+                        android:textColor="@color/black" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_below="@+id/country_et"
+                        android:layout_marginTop="-1dp"
+                        android:background="@drawable/bottom_line_black" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rlBType"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.hitchtransporter.smart.customViews.SmartEditText
+                        android:id="@+id/buisnesType_et"
+                        style="@style/textView_h3"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/bottom_line_black"
+                        android:drawablePadding="@dimen/_20sdp"
+                        android:drawableStart="@drawable/ic_profile_detail"
+                        android:editable="false"
+                        android:focusableInTouchMode="false"
+                        android:gravity="center_vertical"
+                        android:hint="@string/buisness_type"
+                        android:padding="@dimen/_10sdp"
+                        android:textColor="@color/black" />
+
+                    <com.hitchtransporter.smart.customViews.SmartTextView
+                        android:id="@+id/txtVat"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:text="@string/vat"
+                        android:textSize="@dimen/_14sdp" />
+                </RelativeLayout>
+
+
+                <com.hitchtransporter.smart.customViews.SmartEditText
+                    android:id="@+id/profile_details_et"
+                    style="@style/textView_h3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bottom_line_black"
+                    android:drawablePadding="@dimen/_20sdp"
+                    android:drawableStart="@drawable/ic_profile_detail"
+                    android:gravity="center_vertical"
+                    android:hint="@string/comment_eg"
+                    android:padding="@dimen/_10sdp"
+                    android:textColor="@color/black" />
+
+
+                <com.hitchtransporter.smart.customViews.SmartEditText
+                    android:id="@+id/car_no_et"
+                    style="@style/textView_h3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bottom_line_black"
+                    android:drawablePadding="@dimen/_20sdp"
+                    android:drawableStart="@drawable/ic_car"
+                    android:gravity="center_vertical"
+                    android:hint="@string/number_plate_detail"
+                    android:padding="@dimen/_10sdp"
+                    android:textColor="@color/black" />
+
+
+                <LinearLayout
+                    android:id="@+id/price_ll"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bottom_line_black"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/_10sdp">
+
+                    <com.hitchtransporter.smart.customViews.SmartEditText
+                        android:id="@+id/price_et"
+                        style="@style/textView_h3"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_round_white"
+                        android:drawablePadding="@dimen/_20sdp"
+                        android:drawableStart="@drawable/ic_dollars"
+                        android:hint="@string/price_km"
+                        android:inputType="numberDecimal"
+                        android:textColor="@color/black" />
+
+                    <com.hitchtransporter.smart.customViews.SmartTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/e_per_km" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/weight_ll"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bottom_line_black"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/_10sdp">
+
+                    <com.hitchtransporter.smart.customViews.SmartEditText
+                        android:id="@+id/weight_et"
+                        style="@style/textView_h3"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_round_white"
+                        android:drawablePadding="@dimen/_20sdp"
+                        android:drawableStart="@drawable/ic_weight_green"
+                        android:gravity="center_vertical"
+                        android:hint="@string/weight_limit"
+                        android:inputType="number"
+                        android:textColor="@color/black" />
+
+                    <com.hitchtransporter.smart.customViews.SmartTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/kg" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/length_ll"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bottom_line_black"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/_10sdp">
+
+                    <com.hitchtransporter.smart.customViews.SmartEditText
+                        android:id="@+id/length_et"
+                        style="@style/textView_h3"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_round_white"
+                        android:drawablePadding="@dimen/_20sdp"
+                        android:drawableStart="@drawable/ic_length_green"
+                        android:gravity="center_vertical"
+                        android:hint="@string/length_limit"
+                        android:inputType="number"
+                        android:textColor="@color/black" />
+
+                    <com.hitchtransporter.smart.customViews.SmartTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/cm" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/height_ll"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bottom_line_black"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/_10sdp">
+
+                    <com.hitchtransporter.smart.customViews.SmartEditText
+                        android:id="@+id/height_et"
+                        style="@style/textView_h3"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_round_white"
+                        android:drawablePadding="@dimen/_20sdp"
+                        android:drawableStart="@drawable/ic_height_green"
+                        android:gravity="center_vertical"
+                        android:hint="@string/height_limit"
+                        android:inputType="number"
+                        android:textColor="@color/black" />
+
+                    <com.hitchtransporter.smart.customViews.SmartTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/cm" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/width_ll"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bottom_line_black"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/_10sdp">
+
+                    <com.hitchtransporter.smart.customViews.SmartEditText
+                        android:id="@+id/width_et"
+                        style="@style/textView_h3"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_round_white"
+                        android:drawablePadding="@dimen/_20sdp"
+                        android:drawableStart="@drawable/ic_width_green"
+                        android:gravity="center_vertical"
+                        android:hint="@string/width_limit"
+                        android:inputType="number"
+                        android:textColor="@color/black" />
+
+                    <com.hitchtransporter.smart.customViews.SmartTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/cm" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/distance_range_ll"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bottom_line_black"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/_10sdp">
+
+                    <com.hitchtransporter.smart.customViews.SmartEditText
+                        android:id="@+id/distance_range_et"
+                        style="@style/textView_h3"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_round_white"
+                        android:drawablePadding="@dimen/_20sdp"
+                        android:drawableStart="@drawable/ic_distance_range"
+                        android:gravity="center_vertical"
+                        android:hint="@string/distance_range"
+                        android:inputType="number"
+                        android:textColor="@color/black" />
+
+                    <com.hitchtransporter.smart.customViews.SmartTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/km" />
+                </LinearLayout>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/car_images_profile_rv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:orientation="horizontal"
+                    app:layoutManager="android.support.v7.widget.LinearLayoutManager" />
+            </LinearLayout>
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+
+    <RelativeLayout
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_margin="@dimen/_12sdp">
+
+        <ImageView
+            android:id="@+id/edit_iv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/edit" />
+
+        <ImageView
+            android:id="@+id/done_iv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/right_tick"
+            android:visibility="gone" />
+    </RelativeLayout>
+</RelativeLayout>

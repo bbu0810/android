@@ -1,0 +1,494 @@
+<resources xmlns:android="http://schemas.android.com/tools">
+
+    <string name="pankaj">Panklaj darji</string>
+    <string name="app_name">HitchTransporter</string>
+
+    <string name="payment_url">https://www.myfatoorah.com/01082017131927564407194570</string>
+
+    <string name="google_server_key">"AIzaSyDIZdjdKy0tR4gtgEvVR35Ao8G1KlE_RMk"</string>
+    <!--General-->
+    <string name="navigation_drawer_open">open</string>
+    <string name="navigation_drawer_close">close</string>
+    <string name="set">Set</string>
+    <string name="ok">OK</string>
+    <string name="yes">Yes</string>
+    <string name="of">of</string>
+    <string name="no">No</string>
+    <string name="edit">Edit</string>
+    <string name="next">Next</string>
+    <string name="login">Login</string>
+    <string name="lbl_continue">Continue</string>
+    <string name="save">Save</string>
+    <string name="submit">Submit</string>
+    <string name="done">Done</string>
+    <string name="confirm">Confirm</string>
+    <string name="continue_label">Continue</string>
+    <string name="cancel">Cancel</string>
+    <string name="apply">Apply</string>
+    <string name="create">Create</string>
+    <string name="update">Update</string>
+    <string name="success">Success</string>
+    <string name="error">Error</string>
+    <string name="network_not_available">Please check your internet connection &amp; Try again</string>
+    <string name="wrong_loging_data">Please check your email and password.</string>
+
+    <!--Volley-->
+    <string name="generic_server_down">Server may be down please try again later.</string>
+    <string name="no_internet_connection">Please check your internet connection &amp; Try again</string>
+    <string name="generic_error">Error while receiving response</string>
+
+    Registervity-->
+    <string name="hint_first_name">"First Name"</string>
+    <string name="hint_last_name">"Last Name"</string>
+    <string name="hint_gender">"Gender"</string>
+    <string name="hint_date_of_birth">"Date of Birth"</string>
+    <string name="hint_date_of_birth_caps">"DATE OF BIRTH"</string>
+    <string name="hint_city">"City"</string>
+    <string name="hint_state">"State"</string>
+    <string name="hint_postal_code">"Postal Code"</string>
+    <string name="hint_country">"Country"</string>
+    <string name="hint_email">"Email"</string>
+    <string name="hint_password">"Password"</string>
+    <string name="reenter_password">"Re-Enter Password"</string>
+    <string name="sign_in">" Sign In"</string>
+    <string name="sign_up">"Sign Up"</string>
+    <string name="choose_your_gender">"Choose Your Gender"</string>
+    <string name="choose_your_usertype">"You will be using this app as :"</string>
+    <string name="already_have_an_account">Already Have an Account?</string>
+    <string name="or_sign_in_with">Or Sign in with</string>
+    <string name="or_sign_up_with">Or Sign up with</string>
+    <string name="don_t_have_an_account">Don\'t have an account?</string>
+    <string name="create_new">Create New</string>
+    <string name="sign_in_here">Sign In Here</string>
+    <string name="profile">Profile</string>
+    <string name="phone">Phone</string>
+    <string name="or_txt">"OR"</string>
+    <string name="demo_phone">"+12 0123-456-789"</string>
+    <string name="profile_details">Profile Details</string>
+    <string name="add_images_of_car">Add Images of Car</string>
+    <string name="number_plate_detail">Number Plate Details</string>
+
+    Homevity-->
+    <string name="select_your_area">"Select Your Area"</string>
+    <string name="search_area">"Search areas"</string>
+
+
+    <string name="search_here">Search here...</string>
+
+    <!--ProfileActivity-->
+    <string name="full_name">"Full Name"</string>
+    <string name="email">"Email"</string>
+    <string name="email_address">"EMAIL ADDRESS"</string>
+    <string name="gender">"Gender"</string>
+    <string name="city">"City"</string>
+    <string name="state">"State"</string>
+    <string name="country">"Country"</string>
+
+    <string name="notification">Notification</string>
+    <string name="settings">Settings</string>
+    <string name="notifications">Notifications</string>
+    <string name="appointments">Appointments</string>
+    <string name="reject">Reject</string>
+    <string name="accept">Accept</string>
+    <string name="user_name_2">User Name...</string>
+    <string name="user_name">UserName</string>
+    <string name="status">Status</string>
+    <string name="approved">Approved</string>
+    <string name="rejected">Rejected</string>
+    <string name="notify_me">Notify Me</string>
+    <string name="candidate_profile">Candidate Profile</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="phone_no">Phone No</string>
+    <string name="hint_capacity">Capacity</string>
+    <string name="skip">Skip</string>
+    <string name="home">Home</string>
+
+    <!--<string name="order_history">Order History</string>-->
+    <string name="agenda2">" Agenda:"</string>
+    <string name="edit_address">Edit Address</string>
+    <string name="charge">Charge: €</string>
+    <string name="description_colon">Description: </string>
+    <string name="purchased">Purchased</string>
+    <string name="payment_approved">Your Payment has been approved</string>
+    <string name="payment_decline">Your Payment has been declined, Try again</string>
+
+    <string name="terms_conditions">Terms &amp; Conditions</string>
+
+
+    <!--Menu-->
+    <string name="nav_home">Home</string>
+    <string name="nav_profile">Profile</string>
+    <string name="nav_settings">Settings</string>
+    <string name="nav_about_us">About Us</string>
+    <string name="nav_language">Language</string>
+    <string name="nav_aboutme">About Me</string>
+    <string name="nav_recommend_us">Recommend Us</string>
+    <string name="nav_contact_us">Contact Us</string>
+    <string name="nav_terms_conditions">Terms and Conditions</string>
+    <string name="nav_logout">Logout</string>
+
+    <!--Dialog-->
+    <string name="dialog_loading_please_wait">Please wait…</string>
+    <string name="logout">Logout</string>
+    <string name="reject_request">Reject Request</string>
+    <string name="approve_request">Approve Request</string>
+    <string name="quit_app">Quit</string>
+    <string name="logout_message">Are you sure you want to logout?</string>
+    <string name="finish_job_message">Are you sure you want to Finish the job?</string>
+    <string name="switch_message_1">Are you sure you want to switch from Hitcher to User?</string>
+    <string name="switch_message_2">Are you sure you want to switch from User to Hitcher?</string>
+    <string name="reject_message">Are you sure you want to Reject the order request?</string>
+    <string name="approve_message">Are you sure you want to Approve the order request?</string>
+    <string name="quit_message">Are you sure you want to quit Hitch App?</string>
+    <string name="change_language_dialog">Select Language</string>
+    <string name="username_empty">Please enter your Username</string>
+    <string name="password_empty">Please enter your Password</string>
+    <string name="password_mismatch">Password Mismatch</string>
+    <string name="validation_invalid_username_password">Incorrect Email &amp; Password</string>
+    <string name="validation_first_name">Please enter your first name</string>
+    <string name="validation_last_name">Please enter your last name</string>
+    <string name="validation_current_date">Date cannot be less than the current date</string>
+    <string name="validation_current_time">Time cannot be less than the current time for today</string>
+    <string name="validation_enter_email">Please enter your email address</string>
+    <string name="validation_valid_email">Please enter a valid email address</string>
+    <string name="validation_enter_password">Please enter your Password</string>
+    <string name="validation_password_mismatch">Password Mismatch</string>
+    <string name="validation_short_password">Password should be at least 8 characters long</string>
+    <string name="validation_short_phone_no">Phone number should be at least 8 digits long</string>
+    <string name="validation_select_gender">Please select your gender</string>
+    <string name="validation_select_date_of_birth">"Please select your date of birth"</string>
+    <string name="validation_enter_contact_number">"Please enter your Contact Number"</string>
+    <string name="validation_valid_contact_number">"Please enter a valid Contact Number"</string>
+
+    <string name="please_fill_the_empty_fields">Please fill the empty fields</string>
+    <string name="validation_address">"Please enter your Address"</string>
+    <string name="validation_enter_city">"Please enter your city"</string>
+    <string name="validation_invalid_email">Please enter a valid email address</string>
+    <string name="validation_enter_state">Please enter your state</string>
+    <string name="validation_enter_country">Please enter your country</string>
+    <string name="validation_enter_postal_code">Please enter your postal code</string>
+    <string name="validation_subject">Please enter a Subject</string>
+    <string name="validation_message">Please enter a Message</string>
+    <string name="validation_email">Please enter an Email ID</string>
+    <string name="max_3_image">You can add maximum three images</string>
+    <string name="check_network">Please check your network</string>
+    <string name="email_already_inuse">Email already in use</string>
+    <string name="validation_edit_address">Please enter the required fields</string>
+    <string name="user_register">You have been registered</string>
+    <string name="guest_user">Guest</string>
+    <string name="about_me">About Me</string>
+    <string name="profile_updated">Your Profile has been updated</string>
+    <string name="error_profile_update">Error while updating your profile</string>
+    <string name="password_reset">Password Reset Successfully</string>
+    <string name="google_fail">Login with Google failed</string>
+    <string name="facebook_fail">Login with Facebook failed</string>
+    <string name="facebook_cancel">Login with Facebook cancelled</string>
+    <string name="switch1">Switch</string>
+    <string name="switch_info">In order to switch to Hitcher you need to add some information to your profile</string>
+    <string name="no_bank">Bank Details Not Found</string>
+    <string name="bank_setup">Your bank account has not be setup, would you like to do it now?</string>
+
+    <string name="no_data_found">No data found</string>
+    <string name="days">Days</string>
+    <string name="send">Send</string>
+    <string name="subject">Subject</string>
+    <string name="appointment_request_sent">"Appointment Request Sent Successfully"</string>
+    <string name="approve">Approve</string>
+    <string name="_private">Private</string>
+    <string name="_public">Public</string>
+
+    <string name="no_notifications_found">"No Notifications Found"</string>
+    <string name="no_order_history_found">"No Orders Found"</string>
+    <!--<string name="no_order_history_found">"No Order History Found"</string>-->
+
+    <string name="reason">"Reason"</string>
+    <string name="welcome">"Welcome, "</string>
+    <string name="min_away">"min away"</string>
+
+    <string name="dummy_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+        It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+        It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+        and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+        It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+        It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+        and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+        It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+        It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+        and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+    </string>
+
+
+    <string name="dummy_text1">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+        It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+        It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+        and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
+
+    <string name="dummy_text2">Meal 1: Contains starchy carbs.\n\n
+        Meal 2: Contains starchy carbs.\n\n
+        Meal 3: Contains starchy carbs.\n\n
+        Meal 4: Contains starchy carbs.\n\n
+        Meal 5: Contains starchy carbs.</string>
+
+    <string name="dummy_text3">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s. 
+     </string>
+
+    <string name="dummy_text4">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+
+     </string>
+
+    <string name="dummy_address1">1700 Fairgroundes Rd, Casper, WY 82604, USA</string>
+    <string name="dummy_address2">3000 B 1st Ave, Denver, CO 80206, USA</string>
+    <string name="no_address">No Address</string>
+
+
+    <string name="facebook_app_id">303245490178133</string>
+    <string name="fb_login_protocol_scheme">fb1935140500083048</string>
+
+    <string name="com.twitter.sdk.android.CONSUMER_KEY">0YXZz3WPDastTpTMOvE2gTouj</string>
+    <string name="com.twitter.sdk.android.CONSUMER_SECRET"> QFtP2s520TGjotH99SHwzCTZ8rUBybjwhmLkdlaBF6Kpgx7zJW</string>
+
+
+    <string name="buy">buy</string>
+    <string name="share">share</string>
+    <string name="create_account">Create Account</string>
+    <string name="create_your_account">Create Your  Account</string>
+    <string name="edit_your_account">Edit Your Account</string>
+    <string name="age">Age</string>
+    <string name="height">Height</string>
+    <string name="weight">Weight</string>
+    <string name="weight_limit">Weight Limit</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="phone_number">Phone Number</string>
+    <string name="company_address">Company Address</string>
+    <string name="respond">Respond</string>
+    <string name="address_here">Address here</string>
+    <string name="_12_30_5_45">hint_time_static</string>
+    <string name="hint_time_static">yyyy-mm-dd hh:mm</string>
+    <string name="hint_height_static">12.5 cm</string>
+    <string name="hint_weight_static">45 Kg</string>
+    <string name="hint_width_static">5.0 cm</string>
+    <string name="hint_length_static">65.35 cm</string>
+    <string name="order_number">Order Number : </string>
+
+    <string name="sign_up_exclm">Sign Up!</string>
+
+
+    <string name="pending">Pending</string>
+    <string name="dispatched">Dispatched</string>
+    <string name="on_going_order">On Going Order</string>
+    <string name="on_going">Dispatched</string>
+    <string name="cancelled">Cancelled</string>
+    <string name="delivered">Delivered</string>
+    <string name="paid">Paid</string>
+
+
+    <string name="add_car">Please add at least one car image</string>
+    <string name="no_transporter_found">No Hitchers Found</string>
+    <string name="no_recent_orders">No recent orders found</string>
+    <string name="complain_form">Complain Form</string>
+    <string name="complain_title_error">Please enter complain title</string>
+    <string name="complain_description_error">Please enter complain description</string>
+    <string name="complaint_sent">Your complaint had been sent</string>
+    <string name="cvv_validation">Please enter correct cvv number</string>
+    <string name="card_validation">Please enter correct card number</string>
+    <string name="year_validation">Please select expiry year</string>
+    <string name="month_validation">Please select expiry month</string>
+    <string name="cvv_empty">Please enter your cvv number</string>
+    <string name="card_empty">Please enter your card number</string>
+    <string name="invalid_details">Invalid Details</string>
+
+    <string name="rate_the_order">Please rate the order before submitting</string>
+    <string name="thankyou_rating">Thank you for rating your order</string>
+    <string name="order_no">ORDER NO</string>
+    <string name="complain_title">Complain Title</string>
+    <string name="description">Description</string>
+    <string name="forgot_password">Forgot Password ?</string>
+    <string name="forgot_password_text">If you have forgotten your password you can have a new password generated and e-mailed to you.</string>
+    <string name="new_password">NEW PASSWORD</string>
+    <string name="re_enter_password">Re-Enter Password</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="email_caps">EMAIL</string>
+    <string name="password_caps">PASSWORD</string>
+    <string name="forgot_your_password">Forgot your password?</string>
+    <string name="card_no">Card No.:</string>
+    <string name="enter_card_no">Enter Card No.</string>
+    <string name="month">Month</string>
+    <string name="year">Year</string>
+    <string name="cvv">CVV:</string>
+    <string name="if_you_have_master_card_which_does_not_have_an_expiry_date_or_cvv_skip_these_fields">If you have Master Card which does not have an Expiry Date or CVV, skip these fields</string>
+    <string name="save_this_card_for_faster_checkout">Save this card for faster checkout</string>
+    <string name="back">Back</string>
+    <string name="enter_your_card_details">Enter your card details</string>
+    <string name="payment_received_this_month">Payment received this month</string>
+    <string name="thanks_for_rating_your_order">Thanks for rating your order</string>
+    <string name="to">TO</string>
+    <string name="add_description_here">Add description here..</string>
+    <string name="give_your_rating_here">Give Your Rating Here</string>
+    <string name="user_transporter">USER / HITCHER</string>
+    <string name="first_name_caps">FIRST NAME</string>
+    <string name="last_name_caps">LAST NAME</string>
+    <string name="surname_caps">SURNAME</string>
+    <string name="surname">Surname</string>
+    <string name="phone_no_caps">PHONE NO</string>
+    <string name="address_caps">ADDRESS</string>
+    <string name="address">Address</string>
+    <string name="comment_caps">COMMENT</string>
+    <string name="comment">Comment</string>
+    <string name="profile_details_caps">PROFILE DETAIL</string>
+    <string name="add_images_of_car_caps">ADD IMAGES OF CAR</string>
+    <string name="number_plate_details_caps">NUMBER PLATE DETAILS</string>
+    <string name="number_plate_details">Number Plate Details</string>
+    <string name="price_km_caps">PRICE/KM</string>
+    <string name="price_km">Price/Km</string>
+    <string name="distance">Distance</string>
+    <string name="finish_job">Finish Job</string>
+    <string name="request">Request</string>
+    <string name="choose_image_source">Choose Image Source</string>
+    <string name="camera">Camera</string>
+    <string name="gallery">Gallery</string>
+    <string name="payment_history">Payment History</string>
+    <string name="my_chats">My Chats</string>
+    <string name="form_details">Form Details</string>
+    <string name="pickup_location">Pickup Location</string>
+    <string name="dropoff_location">Dropoff location</string>
+    <string name="date_amp_time"><![CDATA[Date & Time]]></string>
+    <string name="width">Width</string>
+    <string name="length">Length</string>
+    <string name="product_size">Product Size</string>
+    <string name="pay">PAY</string>
+    <string name="duration">Duration :</string>
+    <string name="height_col">Height :</string>
+    <string name="weight_col">Weight :</string>
+    <string name="width_col">Width :</string>
+    <string name="product_size_col">Product size :</string>
+    <string name="length_col">Length :</string>
+    <string name="give_rating">" Give Rating "</string>
+    <string name="complain">Complain</string>
+    <string name="start_job">Start Job</string>
+    <string name="cancel_order">Cancel Order</string>
+    <string name="accounts">accounts</string>
+    <string name="payment_confirmed">Your payment has been confirmed</string>
+    <string name="account_number_caps">ACCOUNT NUMBER</string>
+    <string name="postal_code_caps">POSTAL CODE</string>
+    <string name="city_caps">CITY</string>
+    <string name="state_caps">STATE</string>
+    <string name="country_caps">COUNTRY</string>
+    <string name="dob_caps">DOB</string>
+    <string name="iban_caps">IBAN</string>
+    <string name="account_details">Account Details</string>
+    <string name="legal_info">Legal Information</string>
+    <string name="share_friends">Share with Friends</string>
+    <string name="share_via">Share via:</string>
+    <string name="no_chats_available">No Chats Available</string>
+    <string name="start_conversation">Start a Conversation</string>
+    <string name="autologin_unable">Unable to auto login</string>
+    <string name="add_your_bank_details">Add Your Bank Details</string>
+    <string name="kg">Kg</string>
+    <string name="km">Km</string>
+    <string name="price">Price</string>
+    <string name="range">Range</string>
+
+    <string name="bank_accounted_created">Bank Account Created Successfully</string>
+
+    <!--<string name="stripe_key">pk_live_YHTf2cyl1wJVi8Gyf0iNfNoA</string>-->
+    <!--<string name="stripe_key_test">pk_test_QGrUVavlDgeXGnGmAqrEaKdY</string>-->
+
+
+    <string name="private_chat_failed">Private chat dialog creation failed</string>
+    <string name="no_order_history">No Orders Found</string>
+    <!--<string name="no_order_history">No Order History Found</string>-->
+    <string name="enter_range">Please enter your range</string>
+    <string name="msg_sending_failed">Failed to send the message</string>
+    <string name="chat_dialog_failed">Creating chat dialog failed</string>
+    <string name="click_start_conversation">Click to start a conversation</string>
+    <string name="payment">Payment</string>
+    <string name="rating">Rating</string>
+
+    <string name="complain_title_here">Complain Title here..</string>
+    <string name="add_your_description_here">Add your description here...</string>
+    <string name="click_to_start_a_conversation">Click to start a conversation</string>
+    <string name="length_limit">Length Limit</string>
+    <string name="height_limit">Height Limit</string>
+    <string name="distance_range">Distance Range</string>
+    <string name="distance_range_caps">DISTANCE RANGE</string>
+    <string name="distance_range_dialog">Please set a distance range</string>
+    <string name="set_price_limit">Set Price Limit</string>
+    <string name="set_distance_limit">Set Distance Limit</string>
+    <string name="finland">Finland</string>
+    <string name="width_limit">Width Limit</string>
+
+    <string name="no_payment_history">No Payment History Found</string>
+    <string name="enter_address">Please enter set an address before confirming</string>
+    <string name="request_hitcher">Request Hitcher</string>
+    <string name="use_this_app_as">Use This App as:</string>
+    <string name="comment_eg">Comment e.g. Transporting From Point A to B</string>
+    <string name="e_per_km">€/Km</string>
+    <string name="cm">Cm</string>
+
+    <string name="change_language">Change Language</string>
+    <string name="english">English</string>
+    <string name="german">Deutsch</string>
+    <string name="fennish">Finnish</string>
+    <string name="swedish">Swedish</string>
+
+    <string name="check_legal">Check here to indicate that you have read and agree to the above terms.</string>
+    <string name="track_n_order">Track\nOrder</string>
+    <string name="track_order">Track Order</string>
+    <string name="hitcher_requst_success">Your Hitcher Request has been successfully Submitted. Check Order History for your current Order Status.</string>
+    <!--<string name="desired_pickup_date_time_caps"><![CDATA[DESIRED PICKUP DATE & TIME]]></string>-->
+    <string name="view_reviews"><u>View Reviews</u></string>
+    <string name="hitcher_reviews">Hitcher Reviews</string>
+    <string name="review_order">Review Order</string>
+    <string name="no_reviews_found">No Reviews Found</string>
+    <string name="write_a_review">Write A Review</string>
+    <string name="validation_order_current_time">" Order Time cannot be less then Current Time"</string>
+    <string name="tracker_screen">Tracker Screen</string>
+    <string name="iban_bank_number">IBAN BANK NUMBER</string>
+    <string name="transactions_will_occur_through_finland">*Transactions will occur through Finland</string>
+    <string name="proceed">Proceed</string>
+    <string name="awaiting_for_payment">Awaiting For Payment</string>
+    <string name="reviews">reviews</string>
+    <string name="hitcher_comments">Hitcher Comments:</string>
+    <string name="go_to_pick_up_location">Go to Pick up location</string>
+    <string name="total_amount">Total Amount:</string>
+    <string name="refunded_amount">Refunded Amount:</string>
+    <string name="final_amount">Final Amount:</string>
+    <string name="click_for_drop_off_navigation">Click for drop off navigation</string>
+    <string name="sure_start_job">Are you sure you want to Start the Job?</string>
+    <string name="sure_finish_job">Are you sure you want to finish the job?</string>
+    <string name="email_id">Email Id</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="buisness">Buisness</string>
+    <string name="private_key">private</string>
+    <string name="buisness_type">Buisness Type</string>
+    <string name="action_settings">Settings</string>
+    <string name="your_card_details_are_secured_via_128_bit_encryption_by_verisign">your card details are secured via 128 bit encryption by verisign</string>
+
+    <string name="trasition_paymrnt_total">Transaction payment total</string>
+    <string name="app_fee">App fee</string>
+    <string name="app_fee_vat">App fee vat</string>
+    <string name="vat">Vat</string>
+    <string name="refund_amount">Refund Amount</string>
+    <string name="ongoing_orders">Ongoing Orders</string>
+    <string name="orders">Orders</string>
+    <string name="order_history">Order History</string>
+    <string name="go_offline">Go Offline</string>
+    <string name="go_online">Go Online</string>
+    <string name="nav_notifications">Notifications</string>
+    <string name="print_order_via_e_mail">Print order via e-mail</string>
+    <string name="from_date">From Date</string>
+    <string name="to_date">To Date</string>
+    <string name="desired_pickup_date_amp_time"><![CDATA[DESIRED PICKUP DATE & TIME]]></string>
+    <string name="cancel_order_txt">Are you sure you want to Cancel the Job?</string>
+
+
+</resources>

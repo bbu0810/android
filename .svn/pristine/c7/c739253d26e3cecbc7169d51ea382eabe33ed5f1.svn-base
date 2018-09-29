@@ -1,0 +1,41 @@
+{
+    "logs": [
+        {
+            "outputFile": "/home/ebiztrait321/AndroidStudioProjects/Hitcher/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-w820dp-v13/values-w820dp-v13.xml",
+            "map": [
+                {
+                    "source": "/home/ebiztrait321/AndroidStudioProjects/Hitcher/app/src/main/res/values-w820dp/dimens.xml",
+                    "from": {
+                        "startLines": "-1",
+                        "startColumns": "-1",
+                        "startOffsets": "-1"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "57",
+                        "endOffsets": "108"
+                    }
+                },
+                {
+                    "source": "/home/ebiztrait321/AndroidStudioProjects/Hitcher/app/src/main/res/values-w820dp/strings.xml",
+                    "from": {
+                        "startLines": "8,5,6,2,4,3,7,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "383,211,261,55,155,113,309,431",
+                        "endColumns": "47,49,47,57,55,41,73,43",
+                        "endOffsets": "426,256,304,108,206,150,378,470"
+                    },
+                    "to": {
+                        "startLines": "3,4,5,6,7,8,9,10",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "113,161,211,259,317,373,415,489",
+                        "endColumns": "47,49,47,57,55,41,73,43",
+                        "endOffsets": "156,206,254,312,368,410,484,528"
+                    }
+                }
+            ]
+        }
+    ]
+}

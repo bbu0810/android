@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "/home/pct1/Documents/Transpoter/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-xhdpi-v4/values-xhdpi-v4.xml",
+            "map": [
+                {
+                    "source": "/home/pct1/.gradle/caches/transforms-1/files-1.1/twitter-core-3.1.1.aar/474b40cdb0455d8c367899c1090d69f2/res/values-xhdpi-v4/values-xhdpi-v4.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "54",
+                        "endOffsets": "105"
+                    }
+                }
+            ]
+        }
+    ]
+}

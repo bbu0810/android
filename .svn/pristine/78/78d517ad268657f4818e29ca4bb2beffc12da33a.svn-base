@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/_10sdp"
+    android:orientation="vertical">
+
+    <com.hitchtransporter.smart.customViews.SmartTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/change_language_dialog"
+        android:textSize="@dimen/_15sdp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/language_rg">
+
+            <RadioButton
+                android:id="@+id/english_rb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/english" />
+
+            <RadioButton
+                android:id="@+id/german_rb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/german" />
+            <RadioButton
+                android:id="@+id/fennih_rb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/fennish" />
+            <RadioButton
+                android:id="@+id/swedish_rb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/swedish" />
+        </RadioGroup>
+    </LinearLayout>
+</LinearLayout>

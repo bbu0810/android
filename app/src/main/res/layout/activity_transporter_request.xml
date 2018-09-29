@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.hitchtransporter.transporter.Activities.TransporterRequest">
+
+    <include layout="@layout/transporter_toolbar" />
+
+    <android.support.v4.widget.NestedScrollView xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/tranporter_request_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <fragment
+                android:id="@+id/trasporter_request_map"
+                android:name="com.hitchtransporter.transporter.AA_Classes.MySupportMapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_275sdp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bottom_line_black"
+                    android:orientation="horizontal"
+                    android:paddingBottom="@dimen/_10sdp">
+
+                    <com.hitchtransporter.smart.customViews.RoundedImageView
+                        android:id="@+id/transporter_image_request_iv"
+                        android:layout_width="@dimen/_40sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/iata_logo" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_weight="0.7"
+                        android:orientation="vertical">
+
+                        <com.hitchtransporter.smart.customViews.SmartTextView
+                            android:id="@+id/transporter_name_request_tv"
+                            style="@style/textView_h3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Hitcher Name"
+                            android:textAllCaps="false"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="@dimen/_10sdp"
+                                android:layout_height="@dimen/_10sdp"
+                                android:layout_marginTop="@dimen/_2sdp"
+                                android:src="@drawable/location_black" />
+
+                            <com.hitchtransporter.smart.customViews.SmartTextView
+                                android:id="@+id/transporter_address_request_tv"
+                                style="@style/textView_h2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_5sdp"
+                                android:text="@string/no_address" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:orientation="horizontal">
+
+                            <RatingBar
+                                android:id="@+id/transporter_rating_request_rb"
+                                style="?android:attr/ratingBarStyleSmall"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:backgroundTint="@color/yellow"
+                                android:numStars="5"
+                                android:progressTint="@color/yellow"
+                                android:rating="2.5"
+                                android:secondaryProgressTint="@color/yellow" />
+
+
+                            <com.hitchtransporter.smart.customViews.SmartTextView
+                                android:id="@+id/transporter_rating_request_tv"
+                                style="@style/textView_h2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:text="0"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <com.hitchtransporter.smart.customViews.SmartTextView
+                            android:id="@+id/view_reviews_tv"
+                            style="@style/textView_h2"
+                            android:layout_marginTop="@dimen/_2sdp"
+                            android:layout_marginStart="@dimen/_3sdp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/view_reviews"
+                            android:textColor="@color/primaryColor" />
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.3"
+                        android:orientation="vertical">
+
+                        <com.hitchtransporter.smart.customViews.SmartTextView
+                            android:id="@+id/request_distance_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:text="0 Km"
+                            android:textStyle="bold" />
+
+
+                        <com.hitchtransporter.smart.customViews.SmartTextView
+                            android:id="@+id/request_time_tv"
+                            style="@style/textView_h2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_below="@+id/request_distance_tv"
+                            android:text="0 mins"
+                            android:textColor="@color/gray_color" />
+
+                        <com.hitchtransporter.smart.customViews.SmartTextView
+                            android:id="@+id/request_price_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentEnd="true"
+                            android:text="€ 0"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/bottom_line_black"
+                    android:orientation="vertical"
+                    android:paddingBottom="@dimen/_10sdp"
+                    android:paddingEnd="@dimen/_2sdp"
+                    android:paddingStart="@dimen/_5sdp">
+
+                    <com.hitchtransporter.smart.customViews.SmartTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/hitcher_comments" />
+
+                    <com.hitchtransporter.smart.customViews.SmartTextView
+                        android:id="@+id/request_comment_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Hitcher will see comments here" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="@dimen/_4sdp"
+                            android:layout_height="@dimen/_4sdp"
+                            android:src="@drawable/start" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:background="@color/primaryColor" />
+
+                        <ImageView
+                            android:layout_width="@dimen/_4sdp"
+                            android:layout_height="@dimen/_5sdp"
+                            android:layout_marginTop="-2dp"
+                            android:src="@drawable/end" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:orientation="vertical">
+
+                        <com.hitchtransporter.smart.customViews.SmartTextView
+                            android:id="@+id/request_pickup_tv"
+                            style="@style/textView_h2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/no_address" />
+
+                        <com.hitchtransporter.smart.customViews.SmartTextView
+                            android:id="@+id/request_dropoff_tv"
+                            style="@style/textView_h2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_7sdp"
+                            android:text="@string/no_address" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="@dimen/_50sdp"
+                        android:background="@drawable/bg_round_dark_primary_frame"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="@dimen/_25sdp"
+                            android:layout_height="@dimen/_25sdp"
+                            android:src="@drawable/ic_length" />
+
+                        <com.hitchtransporter.smart.customViews.SmartTextView
+                            android:id="@+id/length_request_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="0 cm"
+                            android:textColor="@color/primaryColor" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="@dimen/_50sdp"
+                        android:layout_marginStart="@dimen/_20sdp"
+                        android:background="@drawable/bg_round_dark_primary_frame"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="@dimen/_25sdp"
+                            android:layout_height="@dimen/_25sdp"
+                            android:src="@drawable/ic_height" />
+
+                        <com.hitchtransporter.smart.customViews.SmartTextView
+                            android:id="@+id/height_request_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="0 cm"
+                            android:textColor="@color/primaryColor" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="@dimen/_50sdp"
+                        android:layout_marginStart="@dimen/_20sdp"
+                        android:background="@drawable/bg_round_dark_primary_frame"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="@dimen/_25sdp"
+                            android:layout_height="@dimen/_25sdp"
+                            android:src="@drawable/ic_width" />
+
+                        <com.hitchtransporter.smart.customViews.SmartTextView
+                            android:id="@+id/width_request_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="0 cm"
+                            android:textColor="@color/primaryColor" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="@dimen/_50sdp"
+                        android:layout_marginStart="@dimen/_20sdp"
+                        android:background="@drawable/bg_round_dark_primary_frame"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="@dimen/_25sdp"
+                            android:layout_height="@dimen/_25sdp"
+                            android:src="@drawable/weight" />
+
+                        <com.hitchtransporter.smart.customViews.SmartTextView
+                            android:id="@+id/weight_request_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="0 cm"
+                            android:textColor="@color/primaryColor" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <com.hitchtransporter.smart.customViews.SmartButton
+                    android:id="@+id/request_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:text="@string/request"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+</LinearLayout>

@@ -1,0 +1,11 @@
+#Internal package file, do not edit.
+#Fri May 18 14:05:02 IST 2018
+1.base=/home/ebiztrait321/AndroidStudioProjects/Hitcher/app/build/intermediates/assets/debug
+0.baseType=DIRECTORY
+1.baseType=DIRECTORY
+count=2
+1.set=ASSET
+0.path=fonts/Montserrat-Light.ttf
+0.set=ASSET
+0.base=/home/ebiztrait321/AndroidStudioProjects/Hitcher/app/build/intermediates/assets/debug
+1.path=fonts/Montserrat-Regular.ttf

@@ -1,0 +1,77 @@
+package com.hitchtransporter.transporter.Z_Package;
+
+import android.content.Context;
+import android.util.Log;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+import com.hitchtransporter.smart.weservice.SmartWebManager;
+
+import org.json.JSONException;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class Networking {
+
+    public enum REQUEST_METHOD_PARAMS {PARAMS, RESPONSE_LISTENER}
+
+    private static Networking mInstance;
+
+    public static synchronized Networking getInstance(Context context) {
+        if (mInstance == null) {
+            mInstance = new Networking(context);
+        }
+        return mInstance;
+    }
+
+    Context context;
+
+
+    public Networking(Context context) {
+        this.context = context;
+    }
+
+
+    public void makeRequestWithVolley(Context context,String url,final HashMap<SmartWebManager.REQUEST_METHOD_PARAMS, Object> requestParams) {
+
+        final Map<String, String> params = (Map<String, String>) requestParams.get(SmartWebManager.REQUEST_METHOD_PARAMS.PARAMS);
+
+        RequestQueue queue = Volley.newRequestQueue(context); // 1
+
+        StringRequest postRequest = new StringRequest(Request.Method.POST, url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Log.d("Response", response);
+                        ((NetworkingInterface) requestParams.get(SmartWebManager.REQUEST_METHOD_PARAMS.RESPONSE_LISTENER)).onResponseReceived(response);
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Log.d("Error.Response", error.toString());
+                        ((NetworkingInterface) requestParams.get(SmartWebManager.REQUEST_METHOD_PARAMS.RESPONSE_LISTENER)).onResponseFailed();
+
+                    }
+                }
+        ) {
+            @Override
+            protected Map<String, String> getParams() {
+                return params;
+            }
+        };
+        queue.add(postRequest);
+    }
+
+
+    public interface NetworkingInterface {
+        void onResponseReceived(String response);
+
+        void onResponseFailed();
+    }
+}

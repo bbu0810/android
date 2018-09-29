@@ -1,0 +1,440 @@
+package com.hitchtransporter.transporter.Activities;
+
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
+import android.os.Bundle;
+import android.os.Environment;
+import android.os.StrictMode;
+import android.support.design.widget.Snackbar;
+import android.support.v7.app.AlertDialog;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
+import android.util.Log;
+import android.view.View;
+import android.widget.Toast;
+
+import com.hitchtransporter.transporter.AA_Classes.MasterActivity;
+import com.quickblox.core.QBEntityCallback;
+import com.quickblox.core.exception.QBResponseException;
+import com.quickblox.users.QBUsers;
+import com.quickblox.users.model.QBUser;
+import com.squareup.picasso.Picasso;
+import com.hitchtransporter.R;
+import com.hitchtransporter.smart.customViews.RoundedImageView;
+import com.hitchtransporter.smart.customViews.SmartButton;
+import com.hitchtransporter.smart.customViews.SmartEditText;
+import com.hitchtransporter.smart.framework.SmartApplication;
+import com.hitchtransporter.smart.framework.SmartUtils;
+import com.hitchtransporter.smart.weservice.SmartWebManager;
+import com.theartofdev.edmodo.cropper.CropImage;
+import com.theartofdev.edmodo.cropper.CropImageView;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
+import static com.hitchtransporter.smart.framework.SmartUtils.focusEditTextRed;
+import static com.hitchtransporter.smart.framework.SmartUtils.getLanguageCode;
+import static com.hitchtransporter.smart.framework.SmartUtils.getStringArray;
+
+public class Register extends MasterActivity {
+
+    private RoundedImageView registerProfile;
+
+    private SmartEditText userTypeEt;
+    private SmartEditText firstnameRegisterEt;
+    private SmartEditText lastnameRegisterEt;
+    private SmartEditText mobileRegisterEt;
+    private SmartEditText addressRegisterEt;
+    private SmartEditText emailRegisterEt;
+    private SmartEditText passowrdRegisterEt;
+    private SmartEditText rePassowrdRegisterEt;
+
+
+    private SmartButton registerBtn;
+    private String[] userTypeArray;
+    private String profilePicImagePath = "";
+    private Uri currentImageUri;
+    private String cameraImageName;
+    private String PROFILE_PIC = "profile_pic";
+
+    private String USER_TYPE_CODE = USER_CODE;
+    private HashMap<String, String> imageFilePaths = new HashMap<>();
+    private ArrayList<HashMap<String, String>> selected_Address = new ArrayList<>();
+    private String longitude;
+    private String latitude;
+    private static int ADDRESS_CODE = 1001;
+    private HashMap<String, String> socialData = new HashMap<>();
+    private boolean isSocial = false;
+    private String pic_type;
+
+
+    @Override
+    public void setActionListeners() {
+
+    }
+
+    @Override
+    public int getDrawerLayoutID() {
+        return 0;
+    }
+
+    @Override
+    public int getLayoutID() {
+        return R.layout.activity_register;
+    }
+
+    @Override
+    public void initComponents() {
+        super.initComponents();
+
+        Log.d(LATITUDE, SmartUtils.getLatitude());
+
+        registerProfile = findViewById(R.id.register_profile);
+        userTypeEt = findViewById(R.id.usertype_register_et);
+        firstnameRegisterEt = findViewById(R.id.firstname_register_et);
+        lastnameRegisterEt = findViewById(R.id.lastname_register_et);
+        mobileRegisterEt = findViewById(R.id.mobile_register_et);
+        addressRegisterEt = findViewById(R.id.address_register_et);
+        emailRegisterEt = findViewById(R.id.email_register_et);
+        passowrdRegisterEt = findViewById(R.id.passowrd_register_et);
+        rePassowrdRegisterEt = findViewById(R.id.re_passowrd_register_et);
+        userTypeArray = getResources().getStringArray(R.array.user_type_array);
+        registerBtn = findViewById(R.id.register_btn);
+
+
+        registerProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                pic_type = PROFILE_PIC;
+                CropImage.activity()
+                        .setAspectRatio(1, 1)
+                        .setCropShape(CropImageView.CropShape.OVAL)
+                        .setGuidelines(CropImageView.Guidelines.ON)
+                        .start(Register.this);
+            }
+        });
+
+        addressRegisterEt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(Register.this, SelectAddress.class);
+                if (latitude != null && longitude != null) {
+                    i.putExtra(LATITUDE, latitude);
+                    i.putExtra(LONGITUDE, longitude);
+                }
+                startActivityForResult(i, ADDRESS_CODE);
+            }
+        });
+
+
+        userTypeEt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(Register.this);
+                builder.setCancelable(true);
+                builder.setTitle(getString(R.string.choose_your_usertype));
+                builder.setItems(userTypeArray, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int item) {
+                        if (String.valueOf(item).equalsIgnoreCase(USER_CODE)) {
+                            USER_TYPE_CODE = USER_CODE;
+
+                        } else {
+                            USER_TYPE_CODE = TRANSPORTER_CODE;
+
+                        }
+                        userTypeEt.setText(userTypeArray[item]);
+                    }
+                });
+                AlertDialog alert = builder.create();
+                alert.show();
+            }
+        });
+
+        registerBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (check()) {
+                    createNewUser();
+                }
+
+            }
+        });
+
+        if (getIntent().getSerializableExtra(SOCIAL_DATA) != null) {
+            socialData = (HashMap<String, String>) getIntent().getSerializableExtra(SOCIAL_DATA);
+
+
+            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+            StrictMode.setThreadPolicy(policy);
+            try {
+                URL image_url = new URL(socialData.get(PROFILE_IMAGE));
+                HttpURLConnection conn1 = (HttpURLConnection) image_url.openConnection();
+                HttpURLConnection.setFollowRedirects(true);
+                conn1.setInstanceFollowRedirects(true);
+                Bitmap fb_img = BitmapFactory.decodeStream(conn1.getInputStream());
+                String root = Environment.getExternalStorageDirectory().toString();
+                File myDir = new File(root + "/Download");
+                if (!myDir.exists()) {
+                    myDir.mkdirs();
+                }
+                String name = "facebook_pic.jpg";
+                myDir = new File(myDir, name);
+                FileOutputStream out = new FileOutputStream(myDir);
+                fb_img.compress(Bitmap.CompressFormat.JPEG, 90, out);
+                out.flush();
+                out.close();
+                profilePicImagePath = myDir.getAbsolutePath();
+                Picasso.with(this).load(new File(profilePicImagePath)).into(registerProfile);
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            firstnameRegisterEt.setText(socialData.get(FIRST_NAME));
+            lastnameRegisterEt.setText(socialData.get(LAST_NAME));
+            emailRegisterEt.setText(socialData.get(EMAIL));
+            isSocial = true;
+        }
+
+    }
+
+    private boolean check() {
+        boolean isValid = true;
+
+        if (TextUtils.isEmpty(passowrdRegisterEt.getText().toString())) {
+            focusEditTextRed(Register.this, passowrdRegisterEt, true, null, 0);
+            isValid = false;
+        } else if (TextUtils.isEmpty(rePassowrdRegisterEt.getText().toString())) {
+            focusEditTextRed(Register.this, rePassowrdRegisterEt, true, null, 0);
+            isValid = false;
+        } else if (!rePassowrdRegisterEt.getText().toString().equals(passowrdRegisterEt.getText().toString())) {
+            focusEditTextRed(Register.this, passowrdRegisterEt, false, null, 0);
+            focusEditTextRed(Register.this, rePassowrdRegisterEt, true, getString(R.string.password_mismatch), 0);
+            rePassowrdRegisterEt.addTextChangedListener(new TextWatcher() {
+                @Override
+                public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+                }
+
+                @Override
+                public void onTextChanged(CharSequence s, int start, int before, int count) {
+                    passowrdRegisterEt.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0);
+                }
+
+                @Override
+                public void afterTextChanged(Editable s) {
+
+                }
+            });
+            isValid = false;
+        } else if (passowrdRegisterEt.getText().toString().length() < 8) {
+            focusEditTextRed(Register.this, passowrdRegisterEt, true, getString(R.string.validation_short_password), 0);
+            isValid = false;
+        }
+        if (TextUtils.isEmpty(emailRegisterEt.getText().toString())) {
+            focusEditTextRed(Register.this, emailRegisterEt, true, null, 0);
+            isValid = false;
+        } else if (!SmartUtils.emailValidator(emailRegisterEt.getText().toString())) {
+            focusEditTextRed(Register.this, emailRegisterEt, true, getString(R.string.validation_invalid_email), 0);
+            isValid = false;
+        }
+        if (TextUtils.isEmpty(addressRegisterEt.getText().toString())) {
+            isValid = false;
+            focusEditTextRed(Register.this, addressRegisterEt, true, null, 0);
+        }
+        if (TextUtils.isEmpty(mobileRegisterEt.getText().toString())) {
+            focusEditTextRed(Register.this, mobileRegisterEt, true, null, 0);
+            isValid = false;
+        } else if (mobileRegisterEt.getText().toString().length() < 8) {
+            focusEditTextRed(Register.this, mobileRegisterEt, true, getString(R.string.validation_short_phone_no), 0);
+            isValid = false;
+        }
+        if (TextUtils.isEmpty(lastnameRegisterEt.getText().toString())) {
+            isValid = false;
+            focusEditTextRed(Register.this, lastnameRegisterEt, true, null, 0);
+        }
+        if (TextUtils.isEmpty(firstnameRegisterEt.getText().toString())) {
+            focusEditTextRed(Register.this, firstnameRegisterEt, true, null, 0);
+            isValid = false;
+        }
+        if (TextUtils.isEmpty(userTypeEt.getText().toString())) {
+            focusEditTextRed(Register.this, userTypeEt, true, null, 0);
+            isValid = false;
+        }
+        return isValid;
+    }
+
+
+    private void createNewUser() {
+        SmartUtils.showLoadingDialog(Register.this);
+        if (!TextUtils.isEmpty(profilePicImagePath)) {
+            imageFilePaths.put(PROFILE_IMAGE, profilePicImagePath);
+        }
+
+        Map<String, String> params = new HashMap<>();
+        params.put(LANGUAGE, getLanguageCode());
+        params.put(USER_TYPE, USER_TYPE_CODE);
+        params.put(FIRST_NAME, firstnameRegisterEt.getText().toString());
+        params.put(LAST_NAME, lastnameRegisterEt.getText().toString());
+        params.put(FIRST_NAME, firstnameRegisterEt.getText().toString());
+        params.put(MOBILE, mobileRegisterEt.getText().toString());
+        params.put(EMAIL, emailRegisterEt.getText().toString());
+        params.put(PASSWORD, passowrdRegisterEt.getText().toString());
+        params.put(ADDRESS, addressRegisterEt.getText().toString());
+        params.put(DEVICE_TOKEN, SmartApplication.REF_SMART_APPLICATION.readSharedPreferences().getString(SP_FIREBASE_REGID, "no_device_token"));
+        params.put(DEVICE_TYPE, ANDROID);
+        params.put(LATITUDE, latitude);
+        params.put(LONGITUDE, longitude);
+
+        if (USER_TYPE_CODE.equalsIgnoreCase(TRANSPORTER_CODE)) {
+            params.put(PROFILE_DETAIL, "");
+            params.put(NUMBER_PLATE, "");
+            params.put(RATE_PER_KM, "");
+            params.put(BOX_WIDTH, "");
+            params.put(BOX_WEIGHT, "");
+            params.put(BOX_LENGTH, "");
+            params.put(BOX_HEIGHT, "");
+            params.put(BOX_WIDTH, "");
+            params.put(USER_RANGE, "");
+        }
+
+        if (isSocial) {
+            params.put(SOCIAL_ID, socialData.get(SOCIAL_ID));
+            params.put(SOCIAL_TYPE, socialData.get(SOCIAL_TYPE));
+        }
+
+        HashMap<SmartWebManager.REQUEST_METHOD_PARAMS, Object> requestParams = new HashMap<>();
+        if (isSocial) {
+            requestParams.put(SmartWebManager.REQUEST_METHOD_PARAMS.URL, getString(R.string.domain_name_local) + "socialRegister");
+        } else {
+            requestParams.put(SmartWebManager.REQUEST_METHOD_PARAMS.URL, getString(R.string.domain_name_local) + "register");
+        }
+
+        requestParams.put(SmartWebManager.REQUEST_METHOD_PARAMS.CONTEXT, Register.this);
+        requestParams.put(SmartWebManager.REQUEST_METHOD_PARAMS.PARAMS, params);
+        requestParams.put(SmartWebManager.REQUEST_METHOD_PARAMS.RESPONSE_LISTENER, new SmartWebManager.OnResponseReceivedListener() {
+
+            @Override
+            public void onResponseReceived(final JSONObject response, boolean isValidResponse, int responseCode) {
+                if (responseCode == 200) {
+                    try {
+                        JSONObject objUser = response.getJSONObject(DATA).getJSONObject("user_detail");
+
+                        SmartApplication.REF_SMART_APPLICATION.writeSharedPreferences(USER_TYPE, objUser.getString(USER_TYPE));
+                        SmartApplication.REF_SMART_APPLICATION.writeSharedPreferences(USER_ID, objUser.getString(USER_ID));
+                        SmartApplication.REF_SMART_APPLICATION.writeSharedPreferences(SP_LOGGED_USER, objUser.toString());
+                        SmartApplication.REF_SMART_APPLICATION.writeSharedPreferences(EMAIL, emailRegisterEt.getText().toString());
+                        registerInQuickBlox();
+
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                } else if (responseCode == 400) {
+                    try {
+                        SmartUtils.showSnackBar(Register.this, response.getJSONObject(DATA).getString(MESSAGE), Snackbar.LENGTH_LONG);
+                        SmartUtils.hideLoadingDialog();
+
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+
+            @Override
+            public void onResponseError() {
+
+                SmartUtils.hideLoadingDialog();
+            }
+        });
+        SmartWebManager.getInstance(getApplicationContext()).addToRequestQueueMultipart(requestParams, imageFilePaths, true);
+    }
+
+
+    private void registerInQuickBlox() {
+        final String user = emailRegisterEt.getText().toString();
+
+
+        String fullname = firstnameRegisterEt.getText().toString() + " " + lastnameRegisterEt.getText().toString();
+
+        QBUser qbUser = new QBUser(user, QUICK_BLOX_PASSWORD);
+        qbUser.setFullName(fullname);
+        QBUsers.signUp(qbUser).performAsync(new QBEntityCallback<QBUser>() {
+            @Override
+            public void onSuccess(QBUser qbUser2, Bundle bundle) {
+                QBUser qbUser = new QBUser(qbUser2.getLogin(), QUICK_BLOX_PASSWORD);
+                QBUsers.signIn(qbUser).performAsync(new QBEntityCallback<QBUser>() {
+                    @Override
+                    public void onSuccess(QBUser qbUser, Bundle bundle) {
+                        SmartUtils.hideLoadingDialog();
+                        SmartApplication.REF_SMART_APPLICATION.writeSharedPreferences(QUICK_BLOX_USER_ID, user);
+                        Intent intent = new Intent(Register.this, Home.class);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(intent);
+                        supportFinishAfterTransition();
+                    }
+
+                    @Override
+                    public void onError(QBResponseException e) {
+                        SmartUtils.hideLoadingDialog();
+                        if (e.getMessage() != null) {
+                            Toast.makeText(Register.this, "SignUp Error2 : " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                            Log.e("@@ERR_SIGNUP_2", e.getMessage());
+                        } else {
+                            Log.e("@@ERR_SIGNUP_2", "NULL FROM QUICKBLOX");
+                        }
+                    }
+                });
+            }
+
+            @Override
+            public void onError(QBResponseException e) {
+                SmartUtils.hideLoadingDialog();
+                if (e.getMessage() != null) {
+                    Toast.makeText(Register.this, "SignUp Error1 : " + e.getMessage() + "\n Try with other Email", Toast.LENGTH_SHORT).show();
+                    Log.e("@@ERR_SIGNUP_1", e.getMessage());
+                } else {
+                    Log.e("@@ERR_SIGNUP_1", "NULL FROM QUICKBLOX\n Try with other Email");
+                }
+            }
+        });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (resultCode == RESULT_OK) {
+            if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
+                CropImage.ActivityResult result = CropImage.getActivityResult(data);
+                Uri resultUri = result.getUri();
+                Picasso.with(Register.this).load(resultUri).into(registerProfile);
+            } else if (requestCode == ADDRESS_CODE) {
+                selected_Address = (ArrayList<HashMap<String, String>>) data.getSerializableExtra(ADDRESS);
+                HashMap<String, String> hashMapAddress = selected_Address.get(0);
+                addressRegisterEt.setText(hashMapAddress.get(ADDRESS));
+                latitude = hashMapAddress.get(LATITUDE);
+                longitude = hashMapAddress.get(LONGITUDE);
+
+            }
+        }
+    }
+}

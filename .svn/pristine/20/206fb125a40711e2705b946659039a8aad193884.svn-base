@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">430161202910-1hto8g846s65fst5roslhceh9nuln6m4.apps.googleusercontent.com</string>
+    <string name="firebase_database_url" translatable="false">https://hitchtransporter.firebaseio.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">430161202910</string>
+    <string name="google_api_key" translatable="false">AIzaSyCk6VrHyp9cCwqRRmo713Sd5YmcCX0m7Cw</string>
+    <string name="google_app_id" translatable="false">1:430161202910:android:5536edb7ff5c9438</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyCk6VrHyp9cCwqRRmo713Sd5YmcCX0m7Cw</string>
+    <string name="google_storage_bucket" translatable="false">hitchtransporter.appspot.com</string>
+    <string name="project_id" translatable="false">hitchtransporter</string>
+</resources>

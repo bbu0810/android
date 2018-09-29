@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ongoing_orders">Ongoing Orders</string>
+    <string name="orders">Orders</string>
+    <string name="order_history">Order History</string>
+    <string name="go_offline">Go Offline</string>
+    <string name="go_online">Go Online</string>
+    <string name="print_order_via_e_mail">Print order via e-mail</string>
+    <string name="from_date">From Date</string>
+    <string name="to_date">To Date</string>
+    <string name="desired_pickup_date_amp_time"><![CDATA[DESIRED PICKUP DATE & TIME]]></string>
+    <string name="cancel_order_txt">Are you sure you want to Cancel the Job?</string>
+    <string name="hitcher">Hitcher</string>
+    <string name="todate_cannotconvert_into_fromdate">To date can not convert  into from date</string>
+    <string name="please_enter_a_valid_email_id">Please enter a valid email id</string>
+    <string name="please_select_from_dat">Please select from date</string>
+    <string name="please_select_to_dat">Please select to date</string>
+    <string name="please_enter_an_email_idd">Please enter an email id</string>
+</resources>

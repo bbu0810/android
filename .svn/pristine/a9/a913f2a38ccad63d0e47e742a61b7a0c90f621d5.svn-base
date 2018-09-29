@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "/home/ebiztrait321/AndroidStudioProjects/Hitcher/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ru-rRU/values-ru-rRU.xml",
+            "map": [
+                {
+                    "source": "/home/ebiztrait321/.gradle/caches/transforms-1/files-1.1/android-image-cropper-2.6.0.aar/52f0e9bf46d43b89463bb8eb7f9b0470/res/values-ru-rRU/values-ru-rRU.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "55,113,171,257,339,412,487",
+                        "endColumns": "57,57,85,81,72,74,76",
+                        "endOffsets": "108,166,252,334,407,482,559"
+                    }
+                }
+            ]
+        }
+    ]
+}

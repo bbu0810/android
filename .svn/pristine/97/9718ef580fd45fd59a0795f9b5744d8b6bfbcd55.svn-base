@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_5sdp">
+
+        <Button
+            android:id="@+id/btnChangelang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:background="@null"
+            android:drawableLeft="@drawable/ic_language"
+            android:drawablePadding="5dp"
+            android:text="@string/change_language" />
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_55sdp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_100sdp"
+            android:src="@drawable/logo_2" />
+
+        <com.hitchtransporter.smart.customViews.SmartEditText
+            android:id="@+id/username_login_et"
+            style="@style/editText_h3"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginLeft="@dimen/_50sdp"
+            android:layout_marginRight="@dimen/_50sdp"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:background="@drawable/bottom_line_accent"
+            android:drawablePadding="@dimen/_5sdp"
+            android:gravity="center"
+            android:hint="@string/email_caps"
+            android:imeOptions="actionNext"
+            android:inputType="textEmailAddress"
+            android:maxLines="1"
+            android:padding="@dimen/_5sdp"
+            android:paddingBottom="@dimen/_12sdp"
+            android:paddingTop="@dimen/_12sdp" />
+
+        <com.hitchtransporter.smart.customViews.SmartEditText
+            android:id="@+id/passowrd_login_et"
+            style="@style/editText_h3"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginLeft="@dimen/_50sdp"
+            android:layout_marginRight="@dimen/_50sdp"
+            android:layout_marginTop="@dimen/_25sdp"
+            android:background="@drawable/bottom_line_accent"
+            android:gravity="center"
+            android:hint="@string/password_caps"
+            android:imeOptions="actionDone"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:padding="@dimen/_5sdp"
+            android:paddingBottom="@dimen/_12sdp"
+            android:paddingTop="@dimen/_12sdp" />
+
+        <com.hitchtransporter.smart.customViews.SmartButton
+            android:id="@+id/login_btn"
+            style="@style/textView_white_h4"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_25sdp"
+            android:background="@drawable/bg_round_dark_primary_border"
+            android:paddingEnd="@dimen/_40sdp"
+            android:paddingStart="@dimen/_40sdp"
+            android:text="@string/login"
+            android:textAllCaps="true" />
+
+        <com.hitchtransporter.smart.customViews.SmartTextView
+            android:id="@+id/forgot_password_tv"
+            style="@style/textView_h3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:gravity="center"
+            android:text="@string/forgot_your_password"
+            android:textColor="@color/primaryColor" />
+
+
+        <com.hitchtransporter.smart.customViews.SmartTextView
+            style="@style/textView_h3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:gravity="center"
+            android:text="@string/or_sign_in_with" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/login_fb_iv"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:src="@drawable/fb" />
+
+            <ImageView
+                android:id="@+id/login_google_iv"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:src="@drawable/google" />
+
+            <ImageView
+                android:id="@+id/login_twitter_iv"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:src="@drawable/twitter" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/login_signup_ll"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/primaryColor"
+        android:gravity="center">
+
+        <com.hitchtransporter.smart.customViews.SmartTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/don_t_have_an_account"
+            android:textColor="@color/white" />
+
+        <com.hitchtransporter.smart.customViews.SmartTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:text="@string/sign_up_exclm"
+            android:textColor="@color/white" />
+    </LinearLayout>
+</RelativeLayout>
