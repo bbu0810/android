@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primaryColor">#4dc48c</color>
+    <color name="primaryColorDark">#33845e</color>
+    <color name="accent">#4dc48c</color>
+    <color name="windowBgColor">#FFFFFF</color>
+    <color name="itemsBgColor">#3F3F3F</color>
+    <color name="theme_color">#11A6DD</color>
+    <color name="gray_color">#999999</color>
+    <!--<color name="gray">#C8C8C8C8</color>-->
+    <color name="send_gray_color">#d7d7d7</color>
+    <color name="divider_color">#e0e0e0</color>
+
+    <color name="trans_white">#E6FFFFFF</color>
+    <color name="trans_theme">#E611A6DD</color>
+
+    <color name="snackBar_bg">#000000</color>
+    <color name="light_gray">#f1eeee</color>
+
+    <color name="transparent">#00000000</color>
+    <color name="textPrimary">#FFFFFF</color>
+    <color name="textSecondary">#FFFFFF</color>
+    <color name="semiWhite">#88FFFFFF</color>
+    <color name="defaultTextColor">#323232</color>
+    <color name="txt_color">#323232</color>
+    <color name="txt_hint_color">#B7B7B7</color>
+
+    <color name="itemSelection">#40000000</color>
+    <color name="itemLowSelection">#26000000</color>
+
+    <color name="yellow">#ffff00</color>
+    <color name="red">#ff0000</color>
+    <color name="light_red">#ff7070</color>
+    <color name="green">#008000</color>
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="dark_grey">#4c4d4f</color>
+    <color name="medium_grey">#5e5e5e</color>
+
+
+    <color name="progress_dialog_transparency">#80000000</color>
+    <color name="dialog_transparency">#80000000</color>
+    <color name="semi_transparency">#40000000</color>
+
+    <color name="light_blue">#27a3fd</color>
+    <color name="dark_blue">#1b2b5f</color>
+</resources>

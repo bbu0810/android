@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.hitchtransporter.transporter.Activities.Complain">
+
+
+    <include layout="@layout/transporter_toolbar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/_10sdp">
+
+        <com.hitchtransporter.smart.customViews.SmartTextView
+            style="@style/textView_h2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:text="@string/order_no" />
+
+        <com.hitchtransporter.smart.customViews.SmartTextView
+            android:id="@+id/order_complain_tv"
+            style="@style/textView_h2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@drawable/bg_round_bordered_grey"
+            android:padding="@dimen/_10sdp"
+            android:text="0" />
+
+        <com.hitchtransporter.smart.customViews.SmartTextView
+            android:id="@+id/smartTextView3"
+            style="@style/textView_h2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:text="@string/complain_title" />
+
+        <com.hitchtransporter.smart.customViews.SmartEditText
+            android:id="@+id/title_complain_et"
+            style="@style/textView_h2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@drawable/bg_round_bordered_grey"
+            android:hint="@string/complain_title_here"
+            android:padding="@dimen/_10sdp" />
+
+        <com.hitchtransporter.smart.customViews.SmartTextView
+            style="@style/textView_h2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:text="@string/description" />
+
+        <com.hitchtransporter.smart.customViews.SmartEditText
+            android:id="@+id/description_complain_et"
+            style="@style/textView_h2"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_100sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@drawable/bg_round_bordered_grey"
+            android:gravity="top"
+            android:hint="@string/add_your_description_here"
+            android:padding="@dimen/_10sdp" />
+
+
+        <com.hitchtransporter.smart.customViews.SmartButton
+            android:id="@+id/send_complain_btn"
+            style="@style/textView_white_h3"
+            android:layout_width="@dimen/_125sdp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textAllCaps="false"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:text="@string/send" />
+    </LinearLayout>
+</LinearLayout>

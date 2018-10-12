@@ -1,0 +1,343 @@
+package com.hitchtransporter.transporter.Activities;
+
+import android.Manifest;
+import android.app.Service;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.IntentSender;
+import android.content.pm.PackageManager;
+import android.graphics.Color;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
+import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.widget.Toolbar;
+import android.util.Log;
+import android.view.View;
+import android.widget.ImageView;
+
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.common.api.PendingResult;
+import com.google.android.gms.common.api.ResultCallback;
+import com.google.android.gms.common.api.Status;
+import com.google.android.gms.location.LocationRequest;
+import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.location.LocationSettingsRequest;
+import com.google.android.gms.location.LocationSettingsResult;
+import com.google.android.gms.location.LocationSettingsStatusCodes;
+import com.hitchtransporter.R;
+import com.hitchtransporter.smart.framework.AlertMagnatic;
+import com.hitchtransporter.smart.framework.SmartApplication;
+import com.hitchtransporter.smart.framework.SmartUtils;
+import com.hitchtransporter.transporter.HomeFragments.OrderHistory;
+import com.hitchtransporter.transporter.HomeFragments.Profile;
+import com.hitchtransporter.transporter.HomeFragments.UserForm;
+import com.hitchtransporter.transporter.HomeFragments.TransporterHome;
+import com.hitchtransporter.transporter.AA_Classes.MasterActivity;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import static com.hitchtransporter.smart.framework.SmartUtils.checkIfTransporter;
+
+public class Home extends MasterActivity implements LocationListener {
+
+    private ViewPager mViewPager;
+    private ImageView homeIv;
+    private ImageView orderHistoyIv;
+    private ImageView profileIv;
+    private UserForm userFormFragment;
+    private Profile profileFragment;
+    private boolean isSwitch;
+
+    @Override
+    public void setActionListeners() {
+        super.setActionListeners();
+    }
+
+    @Override
+    public int getLayoutID() {
+        return R.layout.activity_home;
+    }
+
+    @Override
+    public void initComponents() {
+        super.initComponents();
+        userFormFragment = new UserForm();
+        profileFragment = new Profile();
+        mViewPager = findViewById(R.id.doc_viewpager);
+        homeIv = findViewById(R.id.home_iv);
+        orderHistoyIv = findViewById(R.id.order_history_iv);
+        profileIv = findViewById(R.id.profile_iv);
+
+    }
+
+    @Override
+    public void prepareViews() {
+        super.prepareViews();
+        mViewPager.setOffscreenPageLimit(3);
+
+        String lang = SmartApplication.REF_SMART_APPLICATION.readSharedPreferences().getString(SELECTED_LOCALE, ENGLISH_STR);
+        SmartUtils.ForcefullyLocaleChange(this, lang);
+
+        setupViewPager(mViewPager);
+        setupTabIcons();
+        selectHome();
+
+        if (getIntent() != null) {
+            if (getIntent().getStringExtra(SET_PAGE) != null && getIntent().getStringExtra(SET_PAGE).equalsIgnoreCase(ORDER_HISTORY)) {
+                selectOrderHistory();
+            }
+            if (getIntent().getStringExtra(SET_PAGE) != null && getIntent().getStringExtra(SET_PAGE).equalsIgnoreCase(PROFILE)) {
+                selectProfile();
+            }
+        }
+        setSwitch(true);
+    }
+    //--VIEW PAGER SETUP---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+    private void setupTabIcons() {
+        mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                switch (position) {
+                    case 0:
+                        selectHome();
+                        break;
+                    case 1:
+                        selectOrderHistory();
+                        break;
+                    case 2:
+                        selectProfile();
+                        break;
+                }
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+            }
+        });
+        homeIv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                selectHome();
+            }
+        });
+        orderHistoyIv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                selectOrderHistory();
+            }
+        });
+        profileIv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                selectProfile();
+            }
+        });
+    }
+
+
+    public void selectHome() {
+        mViewPager.setCurrentItem(0);
+
+        homeIv.setColorFilter(Color.WHITE);
+        orderHistoyIv.setColorFilter(getResources().getColor(R.color.primaryColorDark));
+        profileIv.setColorFilter(getResources().getColor(R.color.primaryColorDark));
+
+        setHeaderToolbar(getString(R.string.home));
+    }
+
+
+    public void selectOrderHistory() {
+        mViewPager.setCurrentItem(1);
+
+        homeIv.setColorFilter(getResources().getColor(R.color.primaryColorDark));
+        orderHistoyIv.setColorFilter(Color.WHITE);
+        profileIv.setColorFilter(getResources().getColor(R.color.primaryColorDark));
+
+        setHeaderToolbar(getString(R.string.orders));
+    }
+
+
+    public void selectProfile() {
+        mViewPager.setCurrentItem(2);
+
+        homeIv.setColorFilter(getResources().getColor(R.color.primaryColorDark));
+        orderHistoyIv.setColorFilter(getResources().getColor(R.color.primaryColorDark));
+        profileIv.setColorFilter(Color.WHITE);
+
+        setHeaderToolbar(getString(R.string.profile));
+    }
+
+
+    private void setupViewPager(ViewPager viewPager) {
+
+        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
+
+        if (checkIfTransporter()) {
+            adapter.addFragment(new TransporterHome(), "");
+        } else {
+            adapter.addFragment(userFormFragment, "");
+        }
+        adapter.addFragment(new OrderHistory(), "");
+        Bundle bundle = new Bundle();
+        if (getIntent().getBooleanExtra(IS_SWITCH, false)) {
+            isSwitch = true;
+        }
+        bundle.putBoolean(IS_SWITCH, isSwitch);
+        profileFragment.setArguments(bundle);
+        adapter.addFragment(profileFragment, "");
+        viewPager.setAdapter(adapter);
+    }
+
+    @Override
+    public void onStatusChanged(String provider, int status, Bundle extras) {
+
+    }
+
+    @Override
+    public void onProviderEnabled(String provider) {
+
+    }
+
+    @Override
+    public void onProviderDisabled(String provider) {
+
+    }
+
+
+    private class ViewPagerAdapter extends FragmentPagerAdapter {
+
+        private List<Fragment> mFragmentList = new ArrayList<>();
+        private List<String> mFragmentTitleList = new ArrayList<>();
+
+        public ViewPagerAdapter(FragmentManager manager) {
+            super(manager);
+        }
+
+        @Override
+        public Fragment getItem(int position) {
+            return mFragmentList.get(position);
+        }
+
+        @Override
+        public int getCount() {
+            return mFragmentList.size();
+        }
+
+        public void addFragment(Fragment fragment, String title) {
+            mFragmentList.add(fragment);
+            mFragmentTitleList.add(title);
+        }
+
+
+        @Override
+        public CharSequence getPageTitle(int position) {
+            return mFragmentTitleList.get(position);
+        }
+    }
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        Log.d("@requestCode", String.valueOf(requestCode));
+        if (mViewPager.getCurrentItem() == 0) {
+            if (userFormFragment != null) {
+                userFormFragment.onActivityResult(requestCode, resultCode, data);
+            }
+        }
+        if (mViewPager.getCurrentItem() == 2) {
+            if (profileFragment != null) {
+                profileFragment.onActivityResult(requestCode, resultCode, data);
+            }
+        }
+    }
+
+
+    @Override
+    public void onBackPressed() {
+        if (mViewPager.getCurrentItem() == 0) {
+            if (userFormFragment != null) {
+                if (!userFormFragment.isSetForm) {
+                    if (userFormFragment.isFilterOpen) {
+                        userFormFragment.closeFilter();
+                    } else {
+                        userFormFragment.setForm();
+                    }
+                } else {
+                    SmartUtils.getConfirmDialog(Home.this, getString(R.string.quit_app), getString(R.string.quit_message),
+                            getString(R.string.yes), getString(R.string.no), true, new AlertMagnatic() {
+                                @Override
+                                public void PositiveMethod(DialogInterface dialog, int id) {
+                                    finish();
+                                }
+
+                                @Override
+                                public void NegativeMethod(DialogInterface dialog, int id) {
+
+                                }
+                            });
+                }
+            }
+
+        } else if (mViewPager.getCurrentItem() == 2) {
+            if (profileFragment != null) {
+                if (profileFragment.inUpdateState) {
+                    profileFragment.onBackPressed();
+                    profileFragment.inUpdateState = false;
+                } else {
+                    SmartUtils.getConfirmDialog(Home.this, getString(R.string.quit_app), getString(R.string.quit_message),
+                            getString(R.string.yes), getString(R.string.no), true, new AlertMagnatic() {
+                                @Override
+                                public void PositiveMethod(DialogInterface dialog, int id) {
+                                    finish();
+                                }
+
+                                @Override
+                                public void NegativeMethod(DialogInterface dialog, int id) {
+
+                                }
+                            });
+                }
+            }
+        } else {
+            SmartUtils.getConfirmDialog(Home.this, getString(R.string.quit_app), getString(R.string.quit_message),
+                    getString(R.string.yes), getString(R.string.no), true, new AlertMagnatic() {
+                        @Override
+                        public void PositiveMethod(DialogInterface dialog, int id) {
+                            finish();
+                        }
+
+                        @Override
+                        public void NegativeMethod(DialogInterface dialog, int id) {
+
+                        }
+                    });
+        }
+    }
+
+
+
+    @Override
+    public void manageAppBar(ActionBar actionBar, Toolbar toolbar, ActionBarDrawerToggle actionBarDrawerToggle) {
+        super.manageAppBar(actionBar, toolbar, actionBarDrawerToggle);
+        toolbar.setNavigationIcon(R.drawable.menu);
+    }
+}

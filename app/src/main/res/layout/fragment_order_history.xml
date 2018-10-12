@@ -1,0 +1,79 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.hitchtransporter.smart.customViews.SmartTextView
+        android:id="@+id/email_payment_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/_10sdp"
+        android:background="@drawable/bg_round_dark_primary_border"
+        android:gravity="center"
+        android:paddingBottom="@dimen/_10sdp"
+        android:paddingEnd="@dimen/_20sdp"
+        android:paddingStart="@dimen/_20sdp"
+        android:paddingTop="@dimen/_10sdp"
+        android:text="@string/print_order_via_e_mail"
+        android:textColor="@color/white" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:descendantFocusability="blocksDescendants"
+                android:orientation="vertical">
+
+                <com.hitchtransporter.smart.customViews.SmartTextView
+                    android:id="@+id/ongoing_orders_tv"
+                    style="@style/textView_white_h4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/gray_color"
+                    android:gravity="center"
+                    android:padding="@dimen/_5sdp"
+                    android:text="@string/ongoing_orders"
+                    android:visibility="gone" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/ongoing_orders_rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false" />
+
+                <com.hitchtransporter.smart.customViews.SmartTextView
+                    android:id="@+id/order_history_tv"
+                    style="@style/textView_white_h4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/gray_color"
+                    android:gravity="center"
+                    android:padding="@dimen/_5sdp"
+                    android:text="@string/order_history"
+                    android:visibility="gone" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/order_history_rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false" />
+            </LinearLayout>
+        </android.support.v4.widget.NestedScrollView>
+
+        <include
+            android:id="@+id/layout_no_data"
+            layout="@layout/layout_no_data"
+            android:visibility="gone" />
+    </RelativeLayout>
+</LinearLayout>
+
+    <!--tools:listitem="@layout/row_order_history"-->

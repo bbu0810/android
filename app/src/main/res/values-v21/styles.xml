@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light">
+        <item name="android:windowContentTransitions">true</item>.
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+
+        <item name="colorPrimary">@color/primaryColor</item>
+        <item name="colorPrimaryDark">@color/primaryColorDark</item>
+        <item name="colorAccent">@color/accent</item>
+        <item name="android:textColorPrimary">@color/textPrimary</item>
+        <item name="android:textColorSecondary">@color/textSecondary</item>
+        <item name="android:textColor">@color/defaultTextColor</item>
+        <item name="android:windowBackground">@color/windowBgColor</item>
+        <item name="android:navigationBarColor">@color/primaryColorDark</item>
+
+        <item name="colorControlNormal">@color/accent</item>
+        <item name="colorControlActivated">@color/accent</item>
+        <item name="colorControlHighlight">@color/accent</item>
+        <item name="android:colorButtonNormal">@color/accent</item>
+
+        <item name="alertDialogTheme">@style/AppCompatAlertDialogStyle</item>
+    </style>
+
+    <style name="AppCompatAlertDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorAccent">@color/accent</item>
+        <item name="android:textColorPrimary">@color/defaultTextColor</item>
+    </style>
+
+    <style name="AppDatePicketStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorControlNormal">@android:color/white</item>
+        <item name="colorControlActivated">@color/accent</item>
+        <item name="textColorAlertDialogListItem">@android:color/white</item>
+        <item name="colorAccent">@color/accent</item>
+        <item name="android:textColorPrimary">@android:color/black</item>
+    </style>
+
+    <style name="textView_h0">
+        <item name="android:textColor">@color/txt_color</item>
+        <item name="android:textSize">9sp</item>
+    </style>
+
+    <style name="textView_h1">
+        <item name="android:textColor">@color/txt_color</item>
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="textView_h2">
+        <item name="android:textColor">@color/txt_color</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="textView_h3">
+        <item name="android:textColor">@color/txt_color</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="textView_h4">
+        <item name="android:textColor">@color/txt_color</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="textView_h5">
+        <item name="android:textColor">@color/txt_color</item>
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="textView_h6">
+        <item name="android:textColor">@color/txt_color</item>
+        <item name="android:textSize">25sp</item>
+    </style>
+
+    <style name="textView_white_h1">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="textView_white_h2">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="textView_white_h3">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="textView_white_h4">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="textView_white_h5">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="textView_white_h6">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">25sp</item>
+    </style>
+
+    <style name="editText_h1">
+        <item name="android:textColor">@color/txt_color</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:paddingLeft">10dp</item>
+    </style>
+
+    <style name="editText_h2">
+        <item name="android:textColor">@color/txt_color</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:paddingLeft">10dp</item>
+    </style>
+
+    <style name="editText_h3">
+        <item name="android:textColor">@color/txt_color</item>
+        <item name="android:textSize">16sp</item>
+
+        <item name="android:paddingLeft">10dp</item>
+        <item name="colorControlNormal">@color/accent</item>
+    </style>
+
+    <style name="editText_h4">
+        <item name="android:textColor">@color/txt_color</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:paddingLeft">10dp</item>
+    </style>
+
+    <style name="editText_h5">
+        <item name="android:textColor">@color/txt_color</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:paddingLeft">10dp</item>
+    </style>
+
+    <style name="editText_h6">
+        <item name="android:textColor">@color/txt_color</item>
+        <item name="android:textSize">25sp</item>
+        <item name="android:paddingLeft">10dp</item>
+    </style>
+
+    <style name="CustomActionModeStyle" parent="Base.Widget.AppCompat.ActionMode">
+        <item name="background">@color/accent</item>
+    </style>
+
+    <style name="MultipleImageSelectTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/primaryColor</item>
+        <item name="colorPrimaryDark">@color/primaryColorDark</item>
+        <item name="colorAccent">@color/accent</item>
+        <item name="actionModeStyle">@style/CustomActionModeStyle</item>
+        <item name="windowActionModeOverlay">true</item>
+    </style>
+</resources>
